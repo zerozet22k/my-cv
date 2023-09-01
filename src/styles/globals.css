@@ -25,3 +25,6 @@ body {
     )
     rgb(var(--background-start-rgb));
 }
+body {
+  font-family: 'Fira Code', 'Roboto', sans-serif;
+}

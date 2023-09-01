@@ -1,0 +1,14 @@
+[
+	{
+		"title": "NEC",
+		"description": "Noble Educare Center Webapp and Mobile",
+		"imageUrls": ["nec_home.png", "nec_home.png"],
+		"projectUrl": "https://nec-next.vercel.app/"
+	},
+    {
+		"title": "NEC",
+		"description": "Noble Educare Center Webapp and Mobile",
+		"imageUrls": ["nec_home.png", "nec_home.png"],
+		"projectUrl": "https://nec-next.vercel.app/"
+	}
+]
