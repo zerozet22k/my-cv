@@ -14,6 +14,7 @@ import { useCallback } from "react";
 import Particles from "react-tsparticles";
 import { loadSlim } from "tsparticles-slim";
 import { Engine, Container } from "tsparticles-engine";
+import { Footer } from "@/components/footer";
 
 export default function Portfolio() {
 	const particlesInit = useCallback(async (engine: Engine) => {
@@ -25,7 +26,7 @@ export default function Portfolio() {
 		console.log(container);
 	}, []);
 	return (
-		<div className="portfolio w-full">
+		<div className="w-full relative">
 			<div className="absolute top-0 left-0 w-full h-full">
 				<Particles
 					id="tsparticles"
@@ -144,6 +145,7 @@ export default function Portfolio() {
 				<ProjectShowcase />
 				<Honors />
 				<Interests />
+				<Footer />
 			</div>
 		</div>
 	);
