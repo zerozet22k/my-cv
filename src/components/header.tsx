@@ -80,14 +80,14 @@ export function Header() {
 				{/* Contact Button with animation styles */}
 				{showContactButton ? (
 					<a
-						href="mailto:youremail@example.com"
+						href="mailto:catyx2292000@gmail.com"
 						className="border p-4 rounded contact-button text-xl md:text-2xl lg:text-3xl transition-all duration-500 ease-in-out transform scale-100 opacity-100 hover:-translate-y-1 hover:scale-110"
 					>
 						Get in Touch
 					</a>
 				) : (
 					<a
-						href="mailto:youremail@example.com"
+						href="mailto:catyx2292000@gmail.com"
 						className="border p-4 rounded contact-button text-xl md:text-2xl lg:text-3xl transition-all duration-500 ease-in-out transform scale-90 opacity-0"
 					>
 						Get in Touch

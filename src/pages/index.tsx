@@ -88,7 +88,7 @@ export default function Portfolio() {
 									enable: true,
 									value_area: 800,
 								},
-								value: 200,
+								value: 50,
 							},
 							opacity: {
 								value: 1,

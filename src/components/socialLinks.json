@@ -2,42 +2,37 @@
 	{
 		"platform": "GitHub",
 		"icon": "faGithub",
-		"url": "https://github.com/your_username"
+		"url": "https://github.com/charonzero"
 	},
 	{
 		"platform": "StackOverflow",
 		"icon": "faStackOverflow",
-		"url": "https://stackoverflow.com/users/your_user_id"
+		"url": "https://stackoverflow.com/users/17167891"
 	},
 	{
 		"platform": "Twitter",
 		"icon": "faTwitter",
-		"url": "https://twitter.com/your_username"
+		"url": "#"
 	},
 	{
 		"platform": "Instagram",
 		"icon": "faInstagram",
-		"url": "https://instagram.com/your_username"
-	},
-	{
-		"platform": "Behance",
-		"icon": "faBehance",
-		"url": "https://behance.net/your_username"
+		"url": "https://www.instagram.com/charon22z/"
 	},
 	{
 		"platform": "LinkedIn",
 		"icon": "faLinkedin",
-		"url": "https://linkedin.com/in/your_username"
+		"url": "https://www.linkedin.com/in/zet22/"
 	},
 	{
 		"platform": "Facebook",
 		"icon": "faFacebook",
-		"url": "https://facebook.com/your_username"
+		"url": "https://facebook.com/charon404"
 	},
 	{
 		"platform": "YouTube",
 		"icon": "faYoutube",
-		"url": "https://youtube.com/c/your_channel_name"
+		"url": "https://youtube.com/c/@ZetPrime"
 	},
 	{
 		"platform": "Twitch",
