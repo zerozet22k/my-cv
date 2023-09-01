@@ -42,7 +42,7 @@ export function Experience() {
 								U Yang Paing, CEO, PMXpress, Thailand
 							</p>
 							<p className="text-gray-700">
-								"Thi Ha's dedication to our project was evident in every aspect
+								"Thi Ha&apos;s dedication to our project was evident in every aspect
 								of the work. Their technical prowess combined with an eye for
 								design significantly improved our platform."
 							</p>
@@ -63,10 +63,10 @@ export function Experience() {
 								Program, Myanmar
 							</p>
 							<p className="text-gray-700">
-								"Thi Ha's contribution to the HOLP platform was invaluable.
+								"Thi Ha&apos;s contribution to the HOLP platform was invaluable.
 								Their strategic approach to development and their passion for
 								online education ensured our platform was both user-friendly and
-								robust. We couldn't have achieved our milestones without their
+								robust. We couldn&apos;t have achieved our milestones without their
 								expertise."
 							</p>
 						</div>

@@ -138,7 +138,7 @@ const BirthdayBadge: React.FC<BirthdayBadgeProps> = ({
 					fontSize="14px"
 					fontWeight="500"
 				>
-					{/* {value} */}
+					{value}
 				</text>
 			</svg>
 		</div>
