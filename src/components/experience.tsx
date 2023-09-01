@@ -9,10 +9,10 @@ export function Experience() {
 				{/* Experience - Startup Dev Myanmar */}
 				<div className="bg-white p-6 rounded-md shadow space-y-4">
 					<h3 className="text-xl font-semibold">
-						Software Development Engineer & Team Lead
+						Software Development Engineer &amp; Team Lead
 					</h3>
 					<p className="text-sm text-gray-700 italic">
-						Startup Dev Myanmar, Jan 2021 - Present · Yangon, Myanmar
+						Startup Dev Myanmar, Jan 2021 - Present &middot; Yangon, Myanmar
 					</p>
 					<ul className="list-disc list-inside text-gray-700 space-y-2">
 						<li>
@@ -28,7 +28,6 @@ export function Experience() {
 							Collaborated with the team to enhance user interfaces and user
 							experience.
 						</li>
-						{/* ... add more specific tasks/responsibilities as bullet points */}
 					</ul>
 					<p className="font-semibold">Skills Used:</p>
 					<p>
@@ -42,9 +41,9 @@ export function Experience() {
 								U Yang Paing, CEO, PMXpress, Thailand
 							</p>
 							<p className="text-gray-700">
-								"Thi Ha&apos;s dedication to our project was evident in every aspect
-								of the work. Their technical prowess combined with an eye for
-								design significantly improved our platform."
+								&quot;Thi Ha&apos;s dedication to our project was evident in
+								every aspect of the work. Their technical prowess combined with
+								an eye for design significantly improved our platform.&quot;
 							</p>
 						</div>
 						<div className="mt-2">
@@ -52,9 +51,9 @@ export function Experience() {
 								U Linn Zaw Htike, Head Master, NEC, Myanmar
 							</p>
 							<p className="text-gray-700">
-								"Working with Thi Ha was transformative for our online presence.
-								Their understanding of our needs combined with their technical
-								skills led to an outstanding website."
+								&quot;Working with Thi Ha was transformative for our online
+								presence. Their understanding of our needs combined with their
+								technical skills led to an outstanding website.&quot;
 							</p>
 						</div>
 						<div className="mt-2">
@@ -63,11 +62,11 @@ export function Experience() {
 								Program, Myanmar
 							</p>
 							<p className="text-gray-700">
-								"Thi Ha&apos;s contribution to the HOLP platform was invaluable.
-								Their strategic approach to development and their passion for
-								online education ensured our platform was both user-friendly and
-								robust. We couldn&apos;t have achieved our milestones without their
-								expertise."
+								&quot;Thi Ha&apos;s contribution to the HOLP platform was
+								invaluable. Their strategic approach to development and their
+								passion for online education ensured our platform was both
+								user-friendly and robust. We couldn&apos;t have achieved our
+								milestones without their expertise.&quot;
 							</p>
 						</div>
 					</div>
@@ -88,7 +87,6 @@ export function Experience() {
 							Implemented user-friendly interfaces, ensuring an engaging user
 							experience.
 						</li>
-						{/* ... add more specific tasks/responsibilities as bullet points */}
 					</ul>
 					<p className="font-semibold">Skills Used:</p>
 					<p>UI Design, API, Networking, Game Programming, and more...</p>
