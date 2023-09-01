@@ -47,7 +47,7 @@ const Summary: React.FC = () => {
 					<h2 className="text-2xl font-bold">About Me</h2>
 					<p className="text-gray-700 leading-relaxed">
 						A passionate software development engineer with extensive experience
-						in web development. Invited to participate in Google's Foobar
+						in web development. Invited to participate in Google&apos;s Foobar
 						challenge. Skilled in a wide range of web development tools and
 						languages with a focus on user interface design, responsiveness, and
 						game development.
