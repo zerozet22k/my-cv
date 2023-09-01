@@ -2,45 +2,59 @@ import React, { useState, useEffect } from "react";
 import Slider from "react-slick";
 import projectsData from "./projects.json";
 
-
 interface ProjectProps {
 	title: string;
 	description: string;
 	imageUrls: string[];
 	projectUrl: string;
+	platform: string;
 	techStack?: string[];
 }
 
 const Project: React.FC<
-    ProjectProps & { onSelectImage: (imageUrl: string | null) => void }
-> = ({ title, description, imageUrls, projectUrl, onSelectImage }) => {
-    return (
-        <div className="p-4 md:p-6">
-            {/* Images List */}
-			<h2 className="text-3xl font-bold mb-8">Completed High Scaled Web Projects</h2>
-            <div className="flex space-x-2 md:space-x-4 overflow-x-auto">
-                {imageUrls.map((imageUrl, idx) => (
-                    <img
-                        key={idx}
-                        src={imageUrl}
-                        alt={`${title}-screenshot-${idx}`}
-                        onClick={() => onSelectImage(imageUrl)}
-                        className="w-32 md:w-48 h-32 md:h-48 object-cover rounded-md cursor-pointer hover:border-blue-400 border-2 transition"
-                    />
-                ))}
-            </div>
-            <h3 className="text-lg md:text-xl mt-4 font-semibold">{title}</h3>
-            <p className="text-xs md:text-sm mt-2 text-gray-700">{description}</p>
-            <a
-                href={projectUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-blue-500 mt-4 inline-block hover:underline"
-            >
-                View Project
-            </a>
-        </div>
-    );
+	ProjectProps & { onSelectImage: (imageUrl: string | null) => void }
+> = ({
+	title,
+	description,
+	imageUrls,
+	projectUrl,
+	platform,
+	techStack,
+	onSelectImage,
+}) => {
+	return (
+		<div className="p-4 md:p-6">
+			{/* Images List */}
+			<h2 className="text-3xl font-bold mb-8">
+				Completed High Scaled Web Projects
+			</h2>
+			<div className="flex space-x-2 md:space-x-4 overflow-x-auto">
+				{imageUrls.map((imageUrl, idx) => (
+					<img
+						key={idx}
+						src={imageUrl}
+						alt={`${title}-screenshot-${idx}`}
+						onClick={() => onSelectImage(imageUrl)}
+						className="w-32 md:w-48 h-32 md:h-48 object-cover rounded-md cursor-pointer hover:border-blue-400 border-2 transition"
+					/>
+				))}
+			</div>
+			<h3 className="text-lg md:text-xl mt-4 font-semibold">{title}</h3>
+			<p className="text-xs md:text-sm mt-2 text-gray-700">{description}</p>
+			<p className="text-xs md:text-sm mt-1 text-gray-500">
+				Platform: {platform}
+			</p>
+			<p className="text-xs md:text-sm mt-1 text-gray-500">{techStack}</p>
+			<a
+				href={projectUrl}
+				target="_blank"
+				rel="noopener noreferrer"
+				className="text-blue-500 mt-4 inline-block hover:underline"
+			>
+				View Project
+			</a>
+		</div>
+	);
 };
 
 const ProjectShowcase: React.FC = () => {

@@ -1,14 +1,16 @@
 [
 	{
 		"title": "NEC",
-		"description": "Noble Educare Center Webapp and Mobile",
+		"description": "A web and mobile application for the Noble Educare Center, offering comprehensive lessons for Burmese students from Grade 0 to Grade 12.",
 		"imageUrls": ["nec_home.png", "nec_home.png"],
-		"projectUrl": "https://nec-next.vercel.app/"
+		"projectUrl": "https://nec-next.vercel.app/",
+		"platform": "Web and Mobile"
 	},
-    {
-		"title": "NEC",
-		"description": "Noble Educare Center Webapp and Mobile",
-		"imageUrls": ["nec_home.png", "nec_home.png"],
-		"projectUrl": "https://nec-next.vercel.app/"
+	{
+		"title": "PMXPRESS",
+		"description": "PMXpress provides logistics service offering door-to-door delivery between Thailand and Myanmar.",
+		"imageUrls": ["pmx_home1.png", "pmx_home2.png"],
+		"projectUrl": "https://pmxpress-link.example.com/",
+		"platform": "Web and Mobile"
 	}
 ]
