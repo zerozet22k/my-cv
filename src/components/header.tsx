@@ -40,7 +40,7 @@ export function Header() {
 			const timeout = setTimeout(() => {
 				setDisplayedName((prevText) => prevText + targetText[nameIndex]);
 				setNameIndex((prevIndex) => prevIndex + 1);
-			}, 10); // Faster typing effect for name
+			}, 100); // Faster typing effect for name
 
 			if (nameIndex === targetText.length - 1) {
 				setTimeout(() => setTypingTitle(true), 500);
@@ -64,20 +64,17 @@ export function Header() {
 			return () => clearTimeout(timeout);
 		}
 	}, [typingTitle, titleIndex]);
-
+	useEffect(() => {
+        document.title = displayedName || "Thi Ha Zaw";
+    }, [displayedName]);
 	const socialLinks: SocialLink[] = socialLinksData as SocialLink[];
 	return (
 		<header className="h-screen text-white w-full px-4">
 			<div className="flex flex-col items-center justify-center h-full space-y-8">
-				{/* Name */}
 				<h1 className="text-4xl md:text-5xl lg:text-6xl font-bold">
 					{displayedName}
 				</h1>
-
-				{/* Title */}
 				<h2 className="text-xl md:text-2xl lg:text-3xl">{displayedTitle}</h2>
-				{/* Social Links */}
-				{/* Contact Button with animation styles */}
 				{showContactButton ? (
 					<a
 						href="mailto:catyx2292000@gmail.com"

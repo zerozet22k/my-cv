@@ -136,13 +136,13 @@ export default function Portfolio() {
 					}}
 				/>
 			</div>
-			<div className="relative z-10 w-full max-w-full">
+			<div className="relative z-10 w-full max-w-full text-black">
 				<Header />
 				<Summary />
 				<Experience />
 				<Education />
 				<Skills />
-				<ProjectShowcase />
+				{/* <ProjectShowcase /> */}
 				<Honors />
 				<Interests />
 				<Footer />

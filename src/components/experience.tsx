@@ -9,7 +9,7 @@ export function Experience() {
 				{/* Experience - Startup Dev Myanmar */}
 				<div className="bg-white p-6 rounded-md shadow space-y-4">
 					<h3 className="text-xl font-semibold">
-						Software Development Engineer &amp; Team Lead
+						Software Development Engineer
 					</h3>
 					<p className="text-sm text-gray-700 italic">
 						Startup Dev Myanmar, Jan 2021 - Present &middot; Yangon, Myanmar
@@ -90,6 +90,27 @@ export function Experience() {
 					</ul>
 					<p className="font-semibold">Skills Used:</p>
 					<p>UI Design, API, Networking, Game Programming, and more...</p>
+				</div>
+				<div className="bg-white p-6 rounded-md shadow space-y-4 mt-8">
+					<h3 className="text-xl font-semibold">Junior Web Developer</h3>
+					<p className="text-sm text-gray-700 italic">
+						March 2019 - Jan 2021
+					</p>
+					<ul className="list-disc list-inside text-gray-700 space-y-2">
+						<li>
+							Developed and published various games, catering to diverse
+							audiences.
+						</li>
+						<li>
+							Implemented user-friendly interfaces, ensuring an engaging user
+							experience.
+						</li>
+						<li>
+							Also had to do wordpress user-developer.
+						</li>
+					</ul>
+					<p className="font-semibold">Skills Used:</p>
+					<p>UI Design, Game Programming, and more...</p>
 				</div>
 			</div>
 		</section>
