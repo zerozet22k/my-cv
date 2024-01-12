@@ -142,7 +142,7 @@ export default function Portfolio() {
 				<Experience />
 				<Education />
 				<Skills />
-				{/* <ProjectShowcase /> */}
+				<ProjectShowcase />
 				<Honors />
 				<Interests />
 				<Footer />

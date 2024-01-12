@@ -2,15 +2,15 @@
 	{
 		"title": "NEC",
 		"description": "A web and mobile application for the Noble Educare Center, offering comprehensive lessons for Burmese students from Grade 0 to Grade 12.",
-		"imageUrls": ["nec_home.png", "nec_home.png"],
-		"projectUrl": "https://nec-next.vercel.app/",
+		"imageUrls": ["https://placehold.co/600x400", "https://placehold.co/600x400"],
+		"projectUrl": "https://nobleeducarecentre.com/",
 		"platform": "Web and Mobile"
 	},
 	{
 		"title": "PMXPRESS",
 		"description": "PMXpress provides logistics service offering door-to-door delivery between Thailand and Myanmar.",
-		"imageUrls": ["pmx_home1.png", "pmx_home2.png"],
-		"projectUrl": "https://pmxpress-link.example.com/",
+		"imageUrls": ["https://placehold.co/600x400", "https://placehold.co/600x400"],
+		"projectUrl": "https://pmxpress.co/",
 		"platform": "Web and Mobile"
 	}
 ]
