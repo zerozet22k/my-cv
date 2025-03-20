@@ -95,7 +95,6 @@ export function Header({ color, profile, social }: HeaderProps) {
         </header>
       )}
 
-      {/* Full-Page Hero Section */}
       <section className="h-screen text-white w-full px-4">
         <div className="flex flex-col items-center justify-center h-full space-y-8">
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold">
