@@ -1,0 +1,244 @@
+{
+  "color": "#111827",
+  "profile": {
+    "name": "Thi Ha Zaw (zerozet22k)",
+    "email": "catyx2292000@gmail.com",
+    "title": "Software Development Engineer",
+    "birthDate": "2000-09-22",
+    "imageUrl": "profile.jpg",
+    "about": "A passionate software development engineer with extensive experience in web development. He was invited to participate in Google's Foobar challenge. Skilled in a wide range of web technologies with a focus on user interface design, responsiveness, and game development."
+  },
+
+  "skills": [
+    {
+      "name": "JavaScript",
+      "proficiency": 95,
+      "src": "https://cdn-icons-png.flaticon.com/512/5968/5968292.png"
+    },
+    {
+      "name": "HTML/HTML5",
+      "proficiency": 90,
+      "src": "https://cdn-icons-png.flaticon.com/512/5968/5968267.png"
+    },
+    {
+      "name": "CSS/SASS",
+      "proficiency": 85,
+      "src": "https://cdn-icons-png.flaticon.com/512/5968/5968242.png"
+    },
+    {
+      "name": "MYSQL",
+      "proficiency": 80,
+      "src": "https://cdn-icons-png.flaticon.com/512/5968/5968313.png"
+    },
+    {
+      "name": "PHP",
+      "proficiency": 75,
+      "src": "https://cdn-icons-png.flaticon.com/512/5968/5968332.png"
+    },
+    {
+      "name": "C++",
+      "proficiency": 10,
+      "src": "https://cdn-icons-png.flaticon.com/512/6132/6132222.png"
+    },
+    {
+      "name": "C#",
+      "proficiency": 10,
+      "src": "https://cdn-icons-png.flaticon.com/512/6132/6132221.png"
+    },
+    {
+      "name": "Next.js",
+      "proficiency": 95,
+      "src": "https://cdn.worldvectorlogo.com/logos/next-js.svg"
+    },
+    {
+      "name": "React.js",
+      "proficiency": 90,
+      "src": "https://cdn-icons-png.flaticon.com/512/919/919851.png"
+    },
+    {
+      "name": "Vue.js",
+      "proficiency": 80,
+      "src": "https://cdn-icons-png.flaticon.com/512/919/919825.png"
+    },
+    {
+      "name": "Bootstrap",
+      "proficiency": 85,
+      "src": "https://cdn-icons-png.flaticon.com/512/5968/5968672.png"
+    },
+    {
+      "name": "Tailwind CSS",
+      "proficiency": 100,
+      "src": "https://seeklogo.com/images/T/tailwind-css-logo-5AD4175897-seeklogo.com.png"
+    },
+    {
+      "name": "Node.js",
+      "proficiency": 75,
+      "src": "https://cdn-icons-png.flaticon.com/512/5968/5968322.png"
+    },
+    {
+      "name": "AWS",
+      "proficiency": 25,
+      "src": "https://cdn.iconscout.com/icon/free/png-256/aws-1869025-1583149.png"
+    }
+  ],
+  "social": [
+    {
+      "platform": "GitHub",
+      "icon": "faGithub",
+      "url": "https://github.com/zerozet22k"
+    },
+
+    {
+      "platform": "Instagram",
+      "icon": "faInstagram",
+      "url": "https://www.instagram.com/charon22z/"
+    },
+    {
+      "platform": "LinkedIn",
+      "icon": "faLinkedin",
+      "url": "https://www.linkedin.com/in/zerozet22k"
+    },
+    {
+      "platform": "Facebook",
+      "icon": "faFacebook",
+      "url": "https://facebook.com/charon404"
+    }
+  ],
+  "projects": [
+    {
+      "title": "EWA Finance App",
+      "description": "A modern finance application designed for EWA.sg, empowering staff to track sales and performance-based bonuses. Features a seamless UI, automated calculations, and secure financial data storage.",
+      "imageUrls": [
+        "https://placehold.co/600x400",
+        "https://placehold.co/600x400"
+      ],
+      "projectUrl": "https://ewa-next.vercel.app",
+      "platform": "Web, Mobile"
+    },
+    {
+      "title": "NEC Learning Platform",
+      "description": "A comprehensive e-learning platform for the Noble Educare Center, offering structured online courses for Burmese students from Grade 0 to Grade 12. Designed for accessibility and interactive learning.",
+      "imageUrls": [
+        "https://placehold.co/600x400",
+        "https://placehold.co/600x400"
+      ],
+      "projectUrl": "https://nobleeducarecentre.com/",
+      "platform": "Web, Mobile"
+    },
+    {
+      "title": "PMXPRESS Logistics",
+      "description": "A logistics and delivery service platform enabling efficient door-to-door shipping between Thailand and Myanmar. Features real-time tracking, order management, and cross-border logistics optimization.",
+      "imageUrls": [
+        "https://placehold.co/600x400",
+        "https://placehold.co/600x400"
+      ],
+      "projectUrl": "https://pmxpress.co/",
+      "platform": "Web, Mobile"
+    },
+    {
+      "title": "Honest Online Hour",
+      "description": "An educational marketplace connecting students with expert instructors. Provides skill-based courses, interactive live sessions, and a career growth roadmap.",
+      "imageUrls": [
+        "https://placehold.co/600x400",
+        "https://placehold.co/600x400"
+      ],
+      "projectUrl": "https://www.honestonlinelearning.com",
+      "platform": "Web, Mobile"
+    }
+  ],
+
+  "education": [
+    {
+      "institution": "Greenwich University",
+      "date": "Feb 2018",
+      "qualification": "NCC Level 4 (Partially completed Level 5)",
+      "skills": "Responsiveness, Web Pages, RWD, Networking, Game Engines, HTML5, SASS, SQL",
+      "iconText": "GU"
+    }
+  ],
+  "experience": [
+    {
+      "title": "Software Development Engineer",
+      "company": "Startup Dev Myanmar",
+      "dateRange": "Jan 2021 - Present",
+      "location": "Yangon, Myanmar",
+      "responsibilities": [
+        "Provided leadership in a startup environment, shaping project directions and making key decisions.",
+        "Developed and maintained multiple web applications using a range of technologies.",
+        "Collaborated with the team to enhance user interfaces and user experience."
+      ],
+      "skillsUsed": "REST APIs, User Interface Design, JSOM, DOM, Responsiveness, and more...",
+      "endorsements": [
+        {
+          "name": "U Yang Paing",
+          "position": "CEO",
+          "company": "PMXpress, Thailand",
+          "quote": "Thi Ha's dedication to our project was evident in every aspect of the work. His technical prowess and eye for design significantly improved our platform."
+        },
+        {
+          "name": "U Linn Zaw Htike",
+          "position": "Head Master",
+          "company": "NEC, Myanmar",
+          "quote": "Working with Thi Ha was transformative for our online presence. His understanding of our needs and strong technical skills led to an outstanding website."
+        },
+        {
+          "name": "Daw Aye Myat",
+          "position": "Program Coordinator",
+          "company": "Honest Online Learning Program, Myanmar",
+          "quote": "Thi Ha's contribution to the HOLP platform was invaluable. His strategic approach to development and passion for online education ensured the platform was user-friendly and robust. We couldn't have achieved our milestones without his expertise."
+        },
+        {
+          "name": "EWA.sg Team",
+          "position": "Financial App Development",
+          "company": "EWA.sg, Singapore",
+          "quote": "Thi Ha went above and beyond in developing EWA Finance, our internal financial tracking system. Not only did he deliver a robust and efficient platform, but he also provided us with a **significant discount** while **exceeding our original expectations**. His technical expertise, intuitive UI design, and optimized database structure made our financial tracking seamless, helping our team work more efficiently and improving overall sales performance. We are grateful for his professionalism and dedication."
+        }
+      ]
+    },
+    {
+      "title": "Junior Web Developer",
+      "company": "",
+      "dateRange": "March 2019 - Jan 2021",
+      "responsibilities": [
+        "Assisted in developing and launching multiple web-based projects.",
+        "Implemented user-friendly interfaces to enhance engagement.",
+        "Took on additional WordPress user-developer responsibilities.",
+        "Provided technical assistance to senior developers, helping troubleshoot and optimize code.",
+        "Took initiative in improving project efficiency and suggesting best practices."
+      ],
+      "skillsUsed": "UI Design, Game Programming, WordPress, JavaScript, and more...",
+      "endorsements": [
+        {
+          "name": "Senior Developers Team",
+          "position": "Lead Developers & Colleagues",
+          "company": "Various Web Projects",
+          "quote": "Despite being a junior, Thi Ha demonstrated exceptional problem-solving skills and a deep understanding of web development. He often helped troubleshoot complex issues that even senior developers struggled with. His contributions significantly improved project efficiency, and his ability to optimize workflows was invaluable to the team."
+        }
+      ]
+    },
+    {
+      "title": "Game Development Enthusiast",
+      "company": "Personal Projects",
+      "dateRange": "Jan 2010 - Dec 2020",
+      "responsibilities": [
+        "Experimented with game development concepts, exploring various game engines and programming techniques.",
+        "Built and tested multiple small-scale game projects for fun and learning.",
+        "Gained experience in UI design, game mechanics, and player interaction."
+      ],
+      "skillsUsed": "UI Design, API, Networking, Game Programming, Prototyping, and more..."
+    }
+  ],
+
+  "honors": [
+    {
+      "icon": "faTrophy",
+      "title": "Invitation to Google Foobar Challenge",
+      "description": "Recognized by Google and invited to participate in their exclusive coding challenge."
+    }
+  ],
+  "interests": [
+    { "icon": "faGamepad", "title": "Gaming" },
+    { "icon": "faBook", "title": "Reading" },
+    { "icon": "faCode", "title": "Coding" }
+  ]
+}

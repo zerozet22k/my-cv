@@ -1,0 +1,69 @@
+{
+  "social": [
+    {
+      "platform": "GitHub",
+      "icon": "faGithub",
+      "url": "https://github.com/charonzero"
+    },
+    {
+      "platform": "StackOverflow",
+      "icon": "faStackOverflow",
+      "url": "https://stackoverflow.com/users/17167891"
+    },
+    {
+      "platform": "Twitter",
+      "icon": "faTwitter",
+      "url": "#"
+    },
+    {
+      "platform": "Instagram",
+      "icon": "faInstagram",
+      "url": "https://www.instagram.com/charon22z/"
+    },
+    {
+      "platform": "LinkedIn",
+      "icon": "faLinkedin",
+      "url": "https://www.linkedin.com/in/zet22/"
+    },
+    {
+      "platform": "Facebook",
+      "icon": "faFacebook",
+      "url": "https://facebook.com/charon404"
+    },
+    {
+      "platform": "YouTube",
+      "icon": "faYoutube",
+      "url": "https://youtube.com/c/@ZetPrime"
+    },
+    {
+      "platform": "Twitch",
+      "icon": "faTwitch",
+      "url": "https://twitch.tv/your_username"
+    },
+    {
+      "platform": "Pinterest",
+      "icon": "faPinterest",
+      "url": "https://pinterest.com/your_username"
+    },
+    {
+      "platform": "Snapchat",
+      "icon": "faSnapchatGhost",
+      "url": "https://snapchat.com/add/your_username"
+    },
+    {
+      "platform": "Reddit",
+      "icon": "faRedditAlien",
+      "url": "https://reddit.com/u/your_username"
+    },
+    {
+      "platform": "Tumblr",
+      "icon": "faTumblr",
+      "url": "https://your_username.tumblr.com/"
+    },
+    {
+      "platform": "Dribbble",
+      "icon": "faDribbble",
+      "url": "https://dribbble.com/your_username"
+    }
+  ]
+}

@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef } from "react";
-import projectsData from "./projects.json";
 
-interface Project {
+/** Each project has a title, description, images, a URL, and target platform(s). */
+export interface Project {
   title: string;
   description: string;
   imageUrls: string[];
@@ -9,119 +9,150 @@ interface Project {
   platform: string;
 }
 
-const ProjectCard: React.FC<Project & { onClick: () => void }> = ({
+/**
+ * Props for the main ProjectShowcase component:
+ * - `projects`: list of projects to display
+ * - `color`: optional accent color (e.g., "#3B82F6" or "tomato")
+ */
+interface ProjectShowcaseProps {
+  projects: Project[];
+  color?: string;
+}
+
+/** Card for a single project in the grid. */
+interface ProjectCardProps extends Project {
+  onClick: () => void;
+  accentColor?: string;
+}
+
+const ProjectCard: React.FC<ProjectCardProps> = ({
   title,
   description,
   imageUrls,
   projectUrl,
   platform,
   onClick,
+  accentColor = "#3B82F6",
 }) => {
-  const renderPlatformIcons = (platform: string) => {
-    const platforms = platform.split(", ");
-    return platforms.map((pf) => {
+  const renderPlatformIcons = (platformStr: string) => {
+    return platformStr.split(", ").map((pf) => {
       if (pf === "Web") {
         return (
-          <span key={pf} className="inline-block mr-2">
+          <span key={pf} className="inline-block mr-1">
             🌐
           </span>
         );
       } else if (pf === "Mobile") {
         return (
-          <span key={pf} className="inline-block mr-2">
+          <span key={pf} className="inline-block mr-1">
             📱
           </span>
         );
       }
+      return null;
     });
   };
 
   return (
-    <div className="flex flex-col bg-white shadow-xl border rounded-lg overflow-hidden h-full">
-      <div className="grid grid-cols-2 gap-2 p-2">
-        {imageUrls.map((url, index) => (
+    <div className="flex flex-col bg-white border border-gray-200 rounded-md shadow-sm overflow-hidden h-full hover:shadow-md transition-shadow">
+      {/* Image grid
+      <div className="grid grid-cols-2 gap-1 p-2">
+        {imageUrls.map((url, idx) => (
           <img
-            key={index}
+            key={idx}
             src={url}
-            alt={`${title} image ${index + 1}`}
-            className="object-cover w-full"
-            style={{ height: "100px" }}
+            alt={`${title} image ${idx + 1}`}
+            className="w-full h-24 object-cover"
           />
         ))}
-      </div>
+      </div> */}
+
       <div className="p-4 flex flex-col justify-between flex-grow">
         <div>
-          <h3 className="text-lg font-bold">
-            {title} {renderPlatformIcons(platform)}
+          <h3 className="text-lg font-bold text-gray-800 flex items-center mb-1">
+            {title}
+            <span className="ml-2 text-sm">
+              {renderPlatformIcons(platform)}
+            </span>
           </h3>
           <p className="text-sm text-gray-600">{description}</p>
         </div>
-        <div>
+
+        <div className="mt-3">
+          {/* Mobile only: direct link */}
           <a
             href={projectUrl}
             target="_blank"
             rel="noopener noreferrer"
-            className="block lg:hidden mt-4 bg-blue-500 text-white p-2 rounded-md hover:bg-blue-600"
+            style={{ backgroundColor: accentColor }}
+            className="block lg:hidden text-white py-2 px-3 rounded-md text-center hover:opacity-90"
           >
             View Project
           </a>
+
+          {/* Desktop only: open mini window */}
           <button
             onClick={onClick}
-            className="hidden lg:block mt-4 bg-blue-500 text-white p-2 rounded-md hover:bg-blue-600"
+            style={{ backgroundColor: accentColor }}
+            className="hidden lg:block text-white py-2 px-3 rounded-md hover:opacity-90"
           >
-            Open Project in Mini Program
+            Open Project
           </button>
         </div>
       </div>
     </div>
   );
 };
-const ProjectWindow: React.FC<Project & { onClose: () => void }> = ({
+
+/** The draggable/resizable iframe "window" that shows the project. */
+interface ProjectWindowProps extends Project {
+  onClose: () => void;
+  accentColor?: string;
+}
+
+const ProjectWindow: React.FC<ProjectWindowProps> = ({
   projectUrl,
   title,
-  description,
   onClose,
+  accentColor = "#3B82F6",
+
+  description,
+  imageUrls,
+  platform,
 }) => {
   const windowRef = useRef<HTMLDivElement>(null);
+
   const [initialSize, setInitialSize] = useState({ width: 0, height: 0 });
+
   const [isDragging, setIsDragging] = useState(false);
   const [dragStart, setDragStart] = useState({ x: 0, y: 0 });
   const [position, setPosition] = useState({ x: 0, y: 0 });
+
   const [size, setSize] = useState({ width: 0, height: 0 });
+
   const [isMinimized, setIsMinimized] = useState(false);
   const [isMaximized, setIsMaximized] = useState(false);
 
-  const handleMouseDown = (e: React.MouseEvent<HTMLDivElement>) => {
-    if (!e.currentTarget.classList.contains("window-title-bar")) {
-      return;
-    }
-    setIsDragging(true);
-    setDragStart({
-      x: e.clientX - position.x,
-      y: e.clientY - position.y,
-    });
-  };
   useEffect(() => {
-    const calculateSize = () => {
-      const widthReduction = window.innerWidth * 0.2;
-      const heightReduction = window.innerHeight * 0.2;
-      setSize({
-        width: window.innerWidth - widthReduction,
-        height: window.innerHeight - heightReduction,
-      });
+    const calcInitial = () => {
+      const wReduction = window.innerWidth * 0.2;
+      const hReduction = window.innerHeight * 0.2;
 
+      setSize({
+        width: window.innerWidth - wReduction,
+        height: window.innerHeight - hReduction,
+      });
       setPosition({
-        x: widthReduction / 2,
-        y: heightReduction / 2,
+        x: wReduction / 2,
+        y: hReduction / 2,
       });
     };
+    calcInitial();
 
-    calculateSize();
-
-    window.addEventListener("resize", calculateSize);
-
-    return () => window.removeEventListener("resize", calculateSize);
+    window.addEventListener("resize", calcInitial);
+    return () => window.removeEventListener("resize", calcInitial);
   }, []);
+
   useEffect(() => {
     const handleMouseMove = (e: MouseEvent) => {
       if (isDragging) {
@@ -131,30 +162,37 @@ const ProjectWindow: React.FC<Project & { onClose: () => void }> = ({
         });
       }
     };
-
-    const handleMouseUp = () => {
-      setIsDragging(false);
-    };
+    const handleMouseUp = () => setIsDragging(false);
 
     document.addEventListener("mousemove", handleMouseMove);
     document.addEventListener("mouseup", handleMouseUp);
-
     return () => {
       document.removeEventListener("mousemove", handleMouseMove);
       document.removeEventListener("mouseup", handleMouseUp);
     };
   }, [isDragging, dragStart]);
 
+  const handleMouseDown = (e: React.MouseEvent<HTMLDivElement>) => {
+    if (!e.currentTarget.classList.contains("window-title-bar")) return;
+    setIsDragging(true);
+    setDragStart({
+      x: e.clientX - position.x,
+      y: e.clientY - position.y,
+    });
+  };
+
   const handleResizeMouseDown = (e: React.MouseEvent<HTMLDivElement>) => {
     const startX = e.clientX;
     const startY = e.clientY;
+    const initW = size.width;
+    const initH = size.height;
 
-    const handleResizeMouseMove = (e: MouseEvent) => {
-      const newWidth = e.clientX - startX + size.width;
-      const newHeight = e.clientY - startY + size.height;
+    const handleResizeMouseMove = (evt: MouseEvent) => {
+      const newW = initW + (evt.clientX - startX);
+      const newH = initH + (evt.clientY - startY);
       setSize({
-        width: Math.max(100, newWidth),
-        height: Math.max(100, newHeight),
+        width: Math.max(200, newW),
+        height: Math.max(150, newH),
       });
     };
 
@@ -165,20 +203,19 @@ const ProjectWindow: React.FC<Project & { onClose: () => void }> = ({
 
     document.addEventListener("mousemove", handleResizeMouseMove);
     document.addEventListener("mouseup", handleResizeMouseUp);
-
     e.stopPropagation();
   };
 
   const toggleMaximize = () => {
     if (!isMaximized) {
-      setInitialSize(size); // Save the current size before maximizing
+      setInitialSize(size);
       setSize({
         width: window.innerWidth,
         height: window.innerHeight,
       });
       setPosition({ x: 0, y: 0 });
     } else {
-      setSize(initialSize); // Restore the previous size
+      setSize(initialSize);
       setPosition({
         x: (window.innerWidth - initialSize.width) / 2,
         y: (window.innerHeight - initialSize.height) / 2,
@@ -191,22 +228,11 @@ const ProjectWindow: React.FC<Project & { onClose: () => void }> = ({
     setIsMinimized(!isMinimized);
   };
 
-  let windowStyle: React.CSSProperties = isMinimized
-    ? {
-        width: `${size.width}px`,
-        height: "30px", // Height of the title bar when minimized
-        left: `${position.x}px`,
-        top: `${position.y}px`,
-        position: "absolute",
-      }
-    : {
-        width: `${size.width}px`,
-        height: `${size.height}px`,
-        left: `${position.x}px`,
-        top: `${position.y}px`,
-        position: "absolute",
-        display: "block",
-      };
+  let windowStyle: React.CSSProperties = {
+    position: "absolute",
+    left: `${position.x}px`,
+    top: `${position.y}px`,
+  };
 
   if (isMaximized) {
     windowStyle = {
@@ -216,94 +242,133 @@ const ProjectWindow: React.FC<Project & { onClose: () => void }> = ({
       left: "0",
       top: "0",
     };
+  } else if (isMinimized) {
+    windowStyle = {
+      ...windowStyle,
+      width: `${size.width}px`,
+      height: "2rem",
+    };
+  } else {
+    windowStyle = {
+      ...windowStyle,
+      width: `${size.width}px`,
+      height: `${size.height}px`,
+    };
   }
 
   return (
     <div
-      className="webView bg-gray-300 rounded-xl overflow-hidden shadow-md"
       ref={windowRef}
+      className="
+        bg-white
+        text-black
+        rounded-lg
+        shadow-2xl
+        overflow-hidden
+        flex
+        flex-col
+      "
       style={windowStyle}
     >
+      {/* TITLE BAR */}
       <div
-        className="window-title-bar bg-indigo-500 text-white p-2 rounded-t-xl flex justify-between items-center"
+        className="
+          window-title-bar
+          px-3
+          py-2
+          flex
+          justify-between
+          items-center
+          cursor-move
+        "
+        style={{ backgroundColor: accentColor, color: "#fff" }}
         onMouseDown={handleMouseDown}
       >
-        <span className="window-title text-xs">{title}</span>
-        <div className="window-controls flex space-x-2">
+        <span className="text-sm font-semibold truncate window-title">
+          {title}
+        </span>
+        <div className="window-controls flex items-center space-x-2">
           <div
-            className="maximize-btn bg-green-500 w-3 h-3 rounded-full cursor-pointer"
+            className="bg-green-500 w-3 h-3 rounded-full cursor-pointer"
             onClick={toggleMinimize}
-          ></div>
+            title="Minimize"
+          />
           <div
-            className="minimize-btn bg-yellow-500 w-3 h-3 rounded-full cursor-pointer"
+            className="bg-yellow-500 w-3 h-3 rounded-full cursor-pointer"
             onClick={toggleMaximize}
-          ></div>
+            title="Maximize"
+          />
           <div
-            className="close-btn bg-red-500 w-3 h-3 rounded-full cursor-pointer"
+            className="bg-red-500 w-3 h-3 rounded-full cursor-pointer"
             onClick={onClose}
-          ></div>
+            title="Close"
+          />
         </div>
       </div>
+
+      {/* IFRAME or minimized */}
       {!isMinimized && (
-        <>
+        <div className="relative flex-grow">
           <iframe
             src={projectUrl}
             title={title}
-            className="h-full w-full"
-          ></iframe>
-          <div
-            className="resize-handle"
-            onMouseDown={handleResizeMouseDown}
-            style={{
-              position: "absolute",
-              right: "0",
-              bottom: "0",
-              width: "20px",
-              height: "20px",
-              cursor: "nwse-resize",
-            }}
-          ></div>
-        </>
+            className="w-full h-full border-none"
+          />
+          {/* Resize handle at bottom-right corner */}
+          {!isMaximized && (
+            <div
+              className="absolute w-4 h-4 bg-transparent right-0 bottom-0 cursor-nwse-resize"
+              onMouseDown={handleResizeMouseDown}
+            />
+          )}
+        </div>
       )}
     </div>
   );
 };
 
-const ProjectShowcase: React.FC = () => {
+export const ProjectShowcase: React.FC<ProjectShowcaseProps> = ({
+  projects,
+  color = "#3B82F6",
+}) => {
   const [selectedProject, setSelectedProject] = useState<Project | null>(null);
 
   useEffect(() => {
-    if (selectedProject) {
-      document.body.style.overflow = "hidden";
-    } else {
-      document.body.style.overflow = "auto";
-    }
+    document.body.style.overflow = selectedProject ? "hidden" : "auto";
   }, [selectedProject]);
 
   return (
     <>
       <section className="py-8 md:py-16 px-2 md:px-16 bg-white">
         <div className="flex flex-wrap -m-2">
-          {projectsData.map((project, index) => (
-            <div className="w-full sm:w-1/2 lg:w-1/3 p-2" key={index}>
+          {projects.map((project, idx) => (
+            <div className="w-full sm:w-1/2 lg:w-1/3 p-2" key={idx}>
               <ProjectCard
                 {...project}
                 onClick={() => setSelectedProject(project)}
+                accentColor={color}
               />
             </div>
           ))}
         </div>
       </section>
-      {/* Display selected project window */}
       {selectedProject && (
-        <div className="fixed top-0 left-0 w-full h-screen flex justify-center items-center bg-black bg-opacity-75 z-50">
+        <div
+          className="
+            fixed
+            inset-0
+            flex
+            justify-center
+            items-center
+            bg-black
+            bg-opacity-75
+            z-50
+          "
+        >
           <ProjectWindow
-            projectUrl={selectedProject.projectUrl}
-            title={selectedProject.title}
-            description={selectedProject.description}
-            imageUrls={selectedProject.imageUrls}
-            platform={selectedProject.platform}
+            {...selectedProject}
             onClose={() => setSelectedProject(null)}
+            accentColor={color}
           />
         </div>
       )}

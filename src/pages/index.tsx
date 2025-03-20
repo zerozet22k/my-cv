@@ -1,152 +1,71 @@
-// Adjust the path based on your folder structure
+// pages/portfolio.tsx (Next.js pages router)
+import React, { useCallback } from "react";
+import dynamic from "next/dynamic";
+import { Engine, Container } from "tsparticles-engine";
+import { loadFull } from "tsparticles"; // loads all tsparticles plugins
+
+// Other imports for your components
 import "font-awesome/css/font-awesome.min.css";
 
-import { Education } from "@/components/education";
-import { Experience } from "@/components/experience";
-import { Header } from "@/components/header";
-import { Honors } from "@/components/honor";
-import { Interests } from "@/components/interests";
-import { Skills } from "@/components/skills";
-import Summary from "@/components/summary";
-import ProjectShowcase from "@/components/projectShowcase";
+import { Education } from "@/components/Education";
+import { Experience } from "@/components/Experience";
+import { Header } from "@/components/Header";
+import HonorsAndInterests, { Honors } from "@/components/HonorsAndInterests";
 
-import { useCallback } from "react";
-import Particles from "react-tsparticles";
-import { loadSlim } from "tsparticles-slim";
-import { Engine, Container } from "tsparticles-engine";
-import { Footer } from "@/components/footer";
+import { SkillsShowcase } from "@/components/SkillsShowcase";
+import AboutMe from "@/components/AboutMe";
+import ProjectShowcase from "@/components/ProjectShowcase";
+import { Footer } from "@/components/Footer";
+import data from "@/data.json";
+
+// IMPORTANT: dynamically import ParticlesBackground
+const ParticlesBackground = dynamic(
+  () => import("@/components/ParticlesBackground"),
+  { ssr: false }
+);
+
+// A wrapper to ensure content is above the particle background
+const ContentWrapper = ({ children }: { children: React.ReactNode }) => {
+  return (
+    <div className="relative z-10 w-full max-w-full text-black">{children}</div>
+  );
+};
 
 export default function Portfolio() {
-	const particlesInit = useCallback(async (engine: Engine) => {
-		console.log(engine);
-		await loadSlim(engine);
-	}, []);
+  const particlesInit = useCallback(async (engine: Engine) => {
+    // load all tsparticles shapes / presets
+    await loadFull(engine);
+  }, []);
 
-	const particlesLoaded = useCallback(async (container?: Container) => {
-		console.log(container);
-	}, []);
-	return (
-		<div className="w-full relative">
-			<div className="absolute top-0 left-0 w-full h-full">
-				<Particles
-					id="tsparticles"
-					init={particlesInit}
-					loaded={particlesLoaded}
-					options={{
-						background: {
-							color: {
-								value: "#0d47a1",
-							},
-						},
-						fpsLimit: 60,
-						interactivity: {
-							events: {
-								onClick: {
-									enable: true,
-									mode: "push",
-								},
-								onHover: {
-									enable: true,
-									mode: "bubble",
-								},
-								resize: true,
-							},
-							modes: {
-								push: {
-									quantity: 10,
-								},
-								bubble: {
-									distance: 400,
-									size: 15,
-									duration: 2,
-								},
-							},
-						},
-						particles: {
-							color: {
-								value: ["#ffffff", "#ddd", "#bbb", "#aaa"],
-							},
-							links: {
-								color: "#aaa",
-								distance: 100,
-								enable: true,
-								opacity: 0.8,
-								width: 0.8,
-							},
-							collisions: {
-								enable: false,
-							},
-							move: {
-								direction: "none",
-								enable: true,
-								outMode: "out",
-								speed: 2,
-								straight: false,
-							},
-							number: {
-								density: {
-									enable: true,
-									value_area: 800,
-								},
-								value: 50,
-							},
-							opacity: {
-								value: 1,
-								anim: {
-									enable: true,
-									speed: 0.8,
-									opacity_min: 0.1,
-									sync: false,
-								},
-							},
-							shape: {
-								type: ["circle", "square", "triangle", "star", "polygon"],
-								polygon: {
-									nb_sides: 6,
-								},
-							},
-							size: {
-								value: 8,
-								random: true,
-								anim: {
-									enable: true,
-									speed: 2,
-									size_min: 0.8,
-									sync: false,
-								},
-							},
-							twinkle: {
-								lines: {
-									enable: true,
-									frequency: 0.05,
-									opacity: 1,
-									color: "#ff0000",
-									width: 0.5,
-								},
-								particles: {
-									enable: true,
-									frequency: 0.05,
-									opacity: 1,
-									color: "#fff",
-									width: 0.5,
-								},
-							},
-						},
-						retina_detect: true,
-					}}
-				/>
-			</div>
-			<div className="relative z-10 w-full max-w-full text-black">
-				<Header />
-				<Summary />
-				<Experience />
-				<Education />
-				<Skills />
-				<ProjectShowcase />
-				<Honors />
-				<Interests />
-				<Footer />
-			</div>
-		</div>
-	);
+  const particlesLoaded = useCallback(async (container?: Container) => {
+    console.log("Particles loaded ->", container);
+  }, []);
+
+  return (
+    <div className="relative w-full">
+      {/* The interactive background with floating icons */}
+      <ParticlesBackground
+        skills={data.skills}
+        color={data.color ?? "#1e1e1e"}
+        init={particlesInit}
+        loaded={particlesLoaded}
+      />
+
+      {/* Foreground content */}
+      <ContentWrapper>
+        <Header
+          profile={data.profile}
+          social={data.social}
+          color={data.color}
+        />
+        <AboutMe color={data.color} profile={data.profile} />
+        <Experience experience={data.experience} />
+        <Education education={data.education} />
+        <SkillsShowcase skills={data.skills} color={data.color} />
+        <ProjectShowcase projects={data.projects} color={data.color} />
+        <HonorsAndInterests interests={data.interests} honors={data.honors} />
+        <Footer social={data.social} />
+      </ContentWrapper>
+    </div>
+  );
 }
