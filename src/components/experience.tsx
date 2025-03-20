@@ -50,7 +50,7 @@ export function Experience({ experience }: ExperienceProps) {
                       {endorsement.name}, {endorsement.position}
                       {endorsement.company ? `, ${endorsement.company}` : ""}
                     </p>
-                    <p className="text-gray-700">"{endorsement.quote}"</p>
+                    <p className="text-gray-700">“{endorsement.quote}”</p>
                   </div>
                 ))}
               </div>
