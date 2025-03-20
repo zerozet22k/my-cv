@@ -6,7 +6,6 @@ interface FooterProps {
 }
 
 export function Footer({ social }: FooterProps) {
-  // Optionally, you could filter out any invalid platforms here.
   const filteredSocial = social.filter((item) => !!item.platform);
 
   return (
