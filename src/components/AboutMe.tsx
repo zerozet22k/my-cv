@@ -53,7 +53,7 @@ const AboutMe: React.FC<AboutMeProps> = ({ color, profile }) => {
       <div className="max-w-5xl mx-auto flex flex-col md:flex-row items-center space-y-8 md:space-y-0 md:space-x-12">
         <div className="flex-shrink-0">
           <img
-            src={profile.imageUrl || "profile.jpg"}
+            src={profile.imageUrl || "profile.png"}
             alt={profile.name}
             className="h-48 w-48 rounded-full shadow-md object-cover"
           />
