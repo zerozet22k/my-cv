@@ -10,6 +10,13 @@ type ParticlesBackgroundProps = {
   loaded: (container?: Container) => Promise<void>;
 };
 
+const localSkillIcons: Record<string, string> = {
+  "Node.js": "/icons/nodejs.svg",
+  "Tailwind CSS": "/icons/tailwindcss.svg",
+};
+
+const getSkillIcon = (skill: Skill) => localSkillIcons[skill.name] ?? skill.src;
+
 const ParticlesBackground: React.FC<ParticlesBackgroundProps> = ({
   skills,
   color,
@@ -49,7 +56,9 @@ const ParticlesBackground: React.FC<ParticlesBackgroundProps> = ({
           return;
         }
 
-        const skillInfo = skills.find((icon: Skill) => icon.src === shapeData.src);
+        const skillInfo = skills.find(
+          (icon: Skill) => getSkillIcon(icon) === shapeData.src
+        );
         if (skillInfo) {
           setHoveredSkill({
             x: e.offsetX,
@@ -75,7 +84,7 @@ const ParticlesBackground: React.FC<ParticlesBackgroundProps> = ({
         shape: {
           type: "image",
           image: {
-            src: skill.src,
+            src: getSkillIcon(skill),
             width: 64,
             height: 64,
           },
