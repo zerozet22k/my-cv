@@ -2,37 +2,30 @@
 import React, { useCallback } from "react";
 import dynamic from "next/dynamic";
 import { Engine, Container } from "tsparticles-engine";
-import { loadFull } from "tsparticles"; // loads all tsparticles plugins
+import { loadFull } from "tsparticles";
 
-// Other imports for your components
 import { Education } from "@/components/Education";
 import { Experience } from "@/components/Experience";
 import { Header } from "@/components/Header";
-import HonorsAndInterests, { Honors } from "@/components/HonorsAndInterests";
-
+import HonorsAndInterests from "@/components/HonorsAndInterests";
 import { SkillsShowcase } from "@/components/SkillsShowcase";
 import AboutMe from "@/components/AboutMe";
 import SimplifiedProjects from "@/components/SimplifiedProjects";
 import { Footer } from "@/components/Footer";
 import data from "@/data.json";
 
-// Dynamic import with proper configuration
 // @ts-expect-error - next/dynamic with @ alias resolution differs at compile time
 const ParticlesBackground = dynamic(() => import("@/components/ParticlesBackground"), {
   ssr: false,
   loading: () => <div className="w-full h-screen bg-white" />,
 }) as React.ComponentType<any>;
 
-// A wrapper to ensure content is above the particle background
 const ContentWrapper = ({ children }: { children: React.ReactNode }) => {
-  return (
-    <div className="relative z-10 w-full max-w-full text-black">{children}</div>
-  );
+  return <div className="relative z-10 w-full max-w-full text-black">{children}</div>;
 };
 
 export default function Portfolio() {
   const particlesInit = useCallback(async (engine: Engine) => {
-    // load all tsparticles shapes / presets
     await loadFull(engine);
   }, []);
 
@@ -42,7 +35,6 @@ export default function Portfolio() {
 
   return (
     <div className="relative w-full">
-      {/* The interactive background with floating icons */}
       <ParticlesBackground
         skills={data.skills}
         color={data.color ?? "#1e1e1e"}
@@ -50,17 +42,12 @@ export default function Portfolio() {
         loaded={particlesLoaded}
       />
 
-      {/* Foreground content */}
       <ContentWrapper>
-        <Header
-          profile={data.profile}
-          social={data.social}
-          color={data.color}
-        />
+        <Header profile={data.profile} social={data.social} color={data.color} />
         <AboutMe color={data.color} profile={data.profile} />
         <Experience experience={data.experience} />
         <Education education={data.education} />
-        <SkillsShowcase skills={data.skills} color={data.color} />
+        <SkillsShowcase groups={data.skillGroups} />
         <SimplifiedProjects projects={data.projects} color={data.color} />
         <HonorsAndInterests interests={data.interests} honors={data.honors} />
         <Footer social={data.social} />

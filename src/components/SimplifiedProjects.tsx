@@ -3,7 +3,7 @@ import React from "react";
 export interface SimpleProject {
   title: string;
   description: string;
-  projectUrl?: string;
+  technologies?: string[];
   platform?: string;
 }
 
@@ -12,41 +12,50 @@ interface Props {
   color?: string;
 }
 
-const truncate = (s: string, n = 120) =>
-  s.length > n ? s.slice(0, n - 1).trimEnd() + "…" : s;
-
-export const SimplifiedProjects: React.FC<Props> = ({ projects, color = "#111827" }) => {
+export const SimplifiedProjects: React.FC<Props> = ({ projects }) => {
   return (
-    <section aria-label="Projects" className="py-8 md:py-12 px-4 md:px-8 bg-white">
-      <div className="max-w-4xl mx-auto">
-        <h2 className="text-2xl font-semibold text-gray-900 mb-4">Projects</h2>
+    <section aria-label="Projects" className="bg-white px-4 py-10 md:px-8 md:py-14">
+      <div className="mx-auto max-w-5xl">
+        <div className="mb-7">
+          <h2 className="text-2xl font-semibold text-gray-900">Selected Projects</h2>
+          <p className="mt-2 max-w-2xl text-sm leading-6 text-gray-600">
+            Product, client, and independent work across full-stack web applications,
+            realtime systems, integrations, and business platforms.
+          </p>
+        </div>
 
-        <ul className="space-y-4">
-          {projects.map((p) => (
-            <li key={p.title} className="flex flex-col sm:flex-row sm:items-start sm:justify-between">
-              <div>
-                <div className="text-lg font-medium text-gray-900">
-                  {p.title}
-                  {p.projectUrl && (
-                    <a
-                      href={p.projectUrl}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="ml-3 text-sm text-indigo-600 hover:underline"
-                    >
-                      Live
-                    </a>
-                  )}
-                </div>
-                <div className="text-sm text-gray-600 mt-1">{truncate(p.description || "", 160)}</div>
+        <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
+          {projects.map((project) => (
+            <article
+              key={project.title}
+              className="rounded-xl bg-gray-50 p-5 transition-colors hover:bg-gray-100"
+            >
+              <div className="flex items-start justify-between gap-4">
+                <h3 className="text-lg font-semibold text-gray-900">{project.title}</h3>
+                {project.platform && (
+                  <span className="shrink-0 rounded-full bg-white px-2.5 py-1 text-xs font-medium text-gray-500">
+                    {project.platform}
+                  </span>
+                )}
               </div>
 
-              {p.platform && (
-                <div className="mt-3 sm:mt-0 sm:ml-6 text-sm text-gray-500">{p.platform}</div>
+              <p className="mt-2 text-sm leading-6 text-gray-600">{project.description}</p>
+
+              {project.technologies && project.technologies.length > 0 && (
+                <div className="mt-4 flex flex-wrap gap-2">
+                  {project.technologies.map((technology) => (
+                    <span
+                      key={technology}
+                      className="rounded-md bg-white px-2.5 py-1 text-xs font-medium text-gray-700"
+                    >
+                      {technology}
+                    </span>
+                  ))}
+                </div>
               )}
-            </li>
+            </article>
           ))}
-        </ul>
+        </div>
       </div>
     </section>
   );

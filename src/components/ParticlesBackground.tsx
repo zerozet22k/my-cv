@@ -20,7 +20,6 @@ const ParticlesBackground: React.FC<ParticlesBackgroundProps> = ({
     x: number;
     y: number;
     name: string;
-    proficiency: number;
   } | null>(null);
 
   const containerRef = useRef<HTMLDivElement>(null);
@@ -39,10 +38,7 @@ const ParticlesBackground: React.FC<ParticlesBackgroundProps> = ({
       };
 
       const radius = 40;
-      const nearbyParticles = container.particles.quadTree.queryCircle(
-        mousePos,
-        radius
-      );
+      const nearbyParticles = container.particles.quadTree.queryCircle(mousePos, radius);
 
       if (nearbyParticles.length > 0) {
         const p = nearbyParticles[0];
@@ -53,15 +49,12 @@ const ParticlesBackground: React.FC<ParticlesBackgroundProps> = ({
           return;
         }
 
-        const skillInfo = skills.find(
-          (icon: Skill) => icon.src === shapeData.src
-        );
+        const skillInfo = skills.find((icon: Skill) => icon.src === shapeData.src);
         if (skillInfo) {
           setHoveredSkill({
             x: e.offsetX,
             y: e.offsetY,
             name: skillInfo.name,
-            proficiency: skillInfo.proficiency,
           });
         } else {
           setHoveredSkill(null);
@@ -72,7 +65,6 @@ const ParticlesBackground: React.FC<ParticlesBackgroundProps> = ({
     });
   };
 
-  // EXACTLY one manual particle per skill
   const manualParticles = skills.map((skill) => {
     const x = Math.random() * 80 + 10;
     const y = Math.random() * 80 + 10;
@@ -99,7 +91,6 @@ const ParticlesBackground: React.FC<ParticlesBackgroundProps> = ({
           },
         },
         move: {
-          // Casting strings to "any" to silence TS about literal union mismatch
           direction: "none" as any,
           speed: 2,
           enable: true,
@@ -132,7 +123,7 @@ const ParticlesBackground: React.FC<ParticlesBackgroundProps> = ({
             zIndex: 9999,
           }}
         >
-          {hoveredSkill.name} - {hoveredSkill.proficiency}%
+          {hoveredSkill.name}
         </div>
       )}
 
@@ -210,7 +201,7 @@ const ParticlesBackground: React.FC<ParticlesBackgroundProps> = ({
               },
             },
           },
-          manualParticles: manualParticles,
+          manualParticles,
           retina_detect: true,
         }}
       />
