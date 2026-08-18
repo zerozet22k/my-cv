@@ -20,8 +20,8 @@
     { "name": "React.js", "proficiency": 90, "src": "https://cdn-icons-png.flaticon.com/512/919/919851.png" },
     { "name": "Vue.js", "proficiency": 80, "src": "https://cdn-icons-png.flaticon.com/512/919/919825.png" },
     { "name": "Bootstrap", "proficiency": 85, "src": "https://cdn-icons-png.flaticon.com/512/5968/5968672.png" },
-    { "name": "Tailwind CSS", "proficiency": 100, "src": "https://seeklogo.com/images/T/tailwind-css-logo-5AD4175897-seeklogo.com.png" },
-    { "name": "Node.js", "proficiency": 75, "src": "https://cdn-icons-png.flaticon.com/512/5968/5968322.png" },
+    { "name": "Tailwind CSS", "proficiency": 100, "src": "/icons/tailwindcss.svg" },
+    { "name": "Node.js", "proficiency": 75, "src": "/icons/nodejs.svg" },
     { "name": "AWS", "proficiency": 25, "src": "https://cdn.iconscout.com/icon/free/png-256/aws-1869025-1583149.png" }
   ],
   "skillGroups": [
