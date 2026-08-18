@@ -10,12 +10,16 @@ type ParticlesBackgroundProps = {
   loaded: (container?: Container) => Promise<void>;
 };
 
-const localSkillIcons: Record<string, string> = {
-  "Node.js": "/icons/nodejs.svg",
-  "Tailwind CSS": "/icons/tailwindcss.svg",
-};
+const normalizeIconSrc = (src: string) => {
+  if (typeof window === "undefined") return src;
 
-const getSkillIcon = (skill: Skill) => localSkillIcons[skill.name] ?? skill.src;
+  try {
+    const url = new URL(src, window.location.origin);
+    return `${url.origin}${url.pathname}`;
+  } catch {
+    return src;
+  }
+};
 
 const ParticlesBackground: React.FC<ParticlesBackgroundProps> = ({
   skills,
@@ -38,40 +42,50 @@ const ParticlesBackground: React.FC<ParticlesBackgroundProps> = ({
     const canvas = container.canvas.element;
     if (!canvas) return;
 
-    canvas.addEventListener("mousemove", (e) => {
+    canvas.onmousemove = (e) => {
       const mousePos = container.interactivity.mouse.position || {
         x: e.offsetX,
         y: e.offsetY,
       };
 
       const radius = 40;
-      const nearbyParticles = container.particles.quadTree.queryCircle(mousePos, radius);
+      const nearbyParticles = container.particles.quadTree.queryCircle(
+        mousePos,
+        radius
+      );
 
-      if (nearbyParticles.length > 0) {
-        const p = nearbyParticles[0];
-        const shapeData = (p as any).shapeData;
-
-        if (!shapeData || !shapeData.src) {
-          setHoveredSkill(null);
-          return;
-        }
-
-        const skillInfo = skills.find(
-          (icon: Skill) => getSkillIcon(icon) === shapeData.src
-        );
-        if (skillInfo) {
-          setHoveredSkill({
-            x: e.offsetX,
-            y: e.offsetY,
-            name: skillInfo.name,
-          });
-        } else {
-          setHoveredSkill(null);
-        }
-      } else {
+      if (nearbyParticles.length === 0) {
         setHoveredSkill(null);
+        return;
       }
-    });
+
+      const particle = nearbyParticles[0];
+      const shapeData = (particle as any).shapeData;
+      const particleSrc = shapeData?.src;
+
+      if (!particleSrc) {
+        setHoveredSkill(null);
+        return;
+      }
+
+      const normalizedParticleSrc = normalizeIconSrc(String(particleSrc));
+      const skillInfo = skills.find(
+        (skill) => normalizeIconSrc(skill.src) === normalizedParticleSrc
+      );
+
+      if (!skillInfo) {
+        setHoveredSkill(null);
+        return;
+      }
+
+      setHoveredSkill({
+        x: e.offsetX,
+        y: e.offsetY,
+        name: skillInfo.name,
+      });
+    };
+
+    canvas.onmouseleave = () => setHoveredSkill(null);
   };
 
   const manualParticles = skills.map((skill) => {
@@ -84,7 +98,7 @@ const ParticlesBackground: React.FC<ParticlesBackgroundProps> = ({
         shape: {
           type: "image",
           image: {
-            src: getSkillIcon(skill),
+            src: skill.src,
             width: 64,
             height: 64,
           },
