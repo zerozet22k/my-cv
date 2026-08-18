@@ -18,7 +18,6 @@
     { "name": "C#", "proficiency": 10, "src": "https://cdn-icons-png.flaticon.com/512/6132/6132221.png" },
     { "name": "Next.js", "proficiency": 95, "src": "https://cdn.worldvectorlogo.com/logos/next-js.svg" },
     { "name": "React.js", "proficiency": 90, "src": "https://cdn-icons-png.flaticon.com/512/919/919851.png" },
-    { "name": "Vue.js", "proficiency": 80, "src": "https://cdn-icons-png.flaticon.com/512/919/919825.png" },
     { "name": "Bootstrap", "proficiency": 85, "src": "https://cdn-icons-png.flaticon.com/512/5968/5968672.png" },
     { "name": "Tailwind CSS", "proficiency": 100, "src": "/icons/tailwindcss.svg" },
     { "name": "Node.js", "proficiency": 75, "src": "/icons/nodejs.svg" },
