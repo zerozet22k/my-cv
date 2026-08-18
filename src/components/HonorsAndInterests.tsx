@@ -34,8 +34,8 @@ export function Honors({ honors }: HonorsProps) {
     <section className="py-16 px-8 md:px-32 z-10 bg-gray-900">
       <div className="max-w-5xl mx-auto space-y-8 text-white">
         <h2 className="text-3xl font-bold mb-8">Honors & Awards</h2>
-        {honors.map((honor, idx) => (
-          <div key={idx} className="flex items-center space-x-4">
+        {honors.map((honor) => (
+          <div key={honor.title} className="flex items-center space-x-4">
             <div className="bg-blue-500 p-4 rounded-full">
               <FontAwesomeIcon
                 icon={
@@ -91,8 +91,8 @@ export function Interests({ interests }: InterestsProps) {
           Personal Interests
         </h2>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {interestData.map((interest, idx) => (
-            <div key={idx} className="flex flex-col items-center space-y-4">
+          {interestData.map((interest) => (
+            <div key={interest.title} className="flex flex-col items-center space-y-4">
               <FontAwesomeIcon
                 icon={
                   interestsIconMapping[

@@ -5,7 +5,7 @@
     "email": "catyx2292000@gmail.com",
     "title": "Software Development Engineer",
     "birthDate": "2000-09-22",
-    "imageUrl": "profile.png",
+    "imageUrl": "profile.jpg",
     "about": "A passionate software development engineer with extensive experience in web development. He was invited to participate in Google's Foobar challenge. Skilled in a wide range of web technologies with a focus on user interface design, responsiveness, and game development."
   },
 
@@ -107,7 +107,7 @@
   "projects": [
     {
       "title": "EWA Finance App",
-      "description": "A modern finance application designed for EWA.sg, empowering staff to track sales and performance-based bonuses. Features a seamless UI, automated calculations, and secure financial data storage.",
+      "description": "Next.js, Tailwind — finance dashboard for EWA.sg with sales tracking and automated bonus calculations.",
       "imageUrls": [
         "https://placehold.co/600x400",
         "https://placehold.co/600x400"
@@ -117,7 +117,7 @@
     },
     {
       "title": "NEC Learning Platform",
-      "description": "A comprehensive e-learning platform for the Noble Educare Center, offering structured online courses for Burmese students from Grade 0 to Grade 12. Designed for accessibility and interactive learning.",
+      "description": "Next.js, React — accessible e-learning platform with course management and interactive lessons for K–12 Burmese students.",
       "imageUrls": [
         "https://placehold.co/600x400",
         "https://placehold.co/600x400"
@@ -127,7 +127,7 @@
     },
     {
       "title": "PMXPRESS Logistics",
-      "description": "A logistics and delivery service platform enabling efficient door-to-door shipping between Thailand and Myanmar. Features real-time tracking, order management, and cross-border logistics optimization.",
+      "description": "Next.js, Node.js — logistics platform with order management and real-time tracking for cross-border shipments.",
       "imageUrls": [
         "https://placehold.co/600x400",
         "https://placehold.co/600x400"
@@ -137,7 +137,7 @@
     },
     {
       "title": "Honest Online Hour",
-      "description": "An educational marketplace connecting students with expert instructors. Provides skill-based courses, interactive live sessions, and a career growth roadmap.",
+      "description": "Next.js, React — online marketplace for live skill-based courses and instructor-led sessions.",
       "imageUrls": [
         "https://placehold.co/600x400",
         "https://placehold.co/600x400"

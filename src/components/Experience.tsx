@@ -27,7 +27,7 @@ export function Experience({ experience }: ExperienceProps) {
       <div className="max-w-7xl mx-auto space-y-12">
         <h2 className="text-3xl font-bold mb-8 text-white">Experience</h2>
         {experience.map((exp, index) => (
-          <div key={index} className="bg-white p-6 rounded-md shadow space-y-4">
+          <div key={`${exp.title}-${index}`} className="bg-white p-6 rounded-md shadow space-y-4">
             <h3 className="text-xl font-semibold">{exp.title}</h3>
             <p className="text-sm text-gray-700 italic">
               {exp.company ? `${exp.company}, ` : ""}
@@ -35,8 +35,8 @@ export function Experience({ experience }: ExperienceProps) {
               {exp.location ? ` · ${exp.location}` : ""}
             </p>
             <ul className="list-disc list-inside text-gray-700 space-y-2">
-              {exp.responsibilities.map((item, idx) => (
-                <li key={idx}>{item}</li>
+              {exp.responsibilities.map((item) => (
+                <li key={item}>{item}</li>
               ))}
             </ul>
             <p className="font-semibold">Skills Used:</p>
@@ -44,8 +44,8 @@ export function Experience({ experience }: ExperienceProps) {
             {exp.endorsements && (
               <div className="mt-4 border-t border-gray-300 pt-4">
                 <h4 className="text-lg font-semibold">Endorsements:</h4>
-                {exp.endorsements.map((endorsement, idx) => (
-                  <div key={idx} className="mt-2">
+                {exp.endorsements.map((endorsement) => (
+                  <div key={`${endorsement.name}-${endorsement.company}`} className="mt-2">
                     <p className="font-medium my-2 underline">
                       {endorsement.name}, {endorsement.position}
                       {endorsement.company ? `, ${endorsement.company}` : ""}

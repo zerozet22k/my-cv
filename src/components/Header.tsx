@@ -96,26 +96,27 @@ export function Header({ color, profile, social }: HeaderProps) {
       )}
 
       <section className="h-screen text-white w-full px-4">
-        <div className="flex flex-col items-center justify-center h-full space-y-8">
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold">
-            {displayedName}
-          </h1>
-          <h2 className="text-xl md:text-2xl lg:text-3xl">{displayedTitle}</h2>
-          {showContactButton ? (
-            <a
-              href={`mailto:${profile.email}`}
-              className="border p-4 rounded contact-button text-xl md:text-2xl lg:text-3xl transition-all duration-500 ease-in-out transform scale-100 opacity-100 hover:-translate-y-1 hover:scale-110"
-            >
-              Get in Touch
-            </a>
-          ) : (
-            <a
-              href={`mailto:${profile.email}`}
-              className="border p-4 rounded contact-button text-xl md:text-2xl lg:text-3xl transition-all duration-500 ease-in-out transform scale-90 opacity-0"
-            >
-              Get in Touch
-            </a>
+        <div className="flex flex-col items-center justify-center h-full space-y-6">
+          {profile.imageUrl && (
+            <img
+              src={profile.imageUrl}
+              alt={`${profile.name} photo`}
+              className="w-20 h-20 md:w-24 md:h-24 rounded-full object-cover border-2 border-white shadow-sm"
+            />
           )}
+
+          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold">{displayedName}</h1>
+          <h2 className="text-xl md:text-2xl lg:text-3xl">{displayedTitle}</h2>
+          <a
+            href={`mailto:${profile.email}`}
+            className={`border p-4 rounded contact-button text-xl md:text-2xl lg:text-3xl transition-all duration-500 ease-in-out transform ${
+              showContactButton
+                ? 'scale-100 opacity-100 hover:-translate-y-1 hover:scale-110'
+                : 'scale-90 opacity-0'
+            }`}
+          >
+            Get in Touch
+          </a>
 
           <div className="flex flex-wrap justify-center items-center">
             <SocialMediaIcons

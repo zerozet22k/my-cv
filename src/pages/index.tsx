@@ -5,8 +5,6 @@ import { Engine, Container } from "tsparticles-engine";
 import { loadFull } from "tsparticles"; // loads all tsparticles plugins
 
 // Other imports for your components
-import "font-awesome/css/font-awesome.min.css";
-
 import { Education } from "@/components/Education";
 import { Experience } from "@/components/Experience";
 import { Header } from "@/components/Header";
@@ -14,15 +12,16 @@ import HonorsAndInterests, { Honors } from "@/components/HonorsAndInterests";
 
 import { SkillsShowcase } from "@/components/SkillsShowcase";
 import AboutMe from "@/components/AboutMe";
-import ProjectShowcase from "@/components/ProjectShowcase";
+import SimplifiedProjects from "@/components/SimplifiedProjects";
 import { Footer } from "@/components/Footer";
 import data from "@/data.json";
 
-// IMPORTANT: dynamically import ParticlesBackground
-const ParticlesBackground = dynamic(
-  () => import("@/components/ParticlesBackground"),
-  { ssr: false }
-);
+// Dynamic import with proper configuration
+// @ts-expect-error - next/dynamic with @ alias resolution differs at compile time
+const ParticlesBackground = dynamic(() => import("@/components/ParticlesBackground"), {
+  ssr: false,
+  loading: () => <div className="w-full h-screen bg-white" />,
+}) as React.ComponentType<any>;
 
 // A wrapper to ensure content is above the particle background
 const ContentWrapper = ({ children }: { children: React.ReactNode }) => {
@@ -62,7 +61,7 @@ export default function Portfolio() {
         <Experience experience={data.experience} />
         <Education education={data.education} />
         <SkillsShowcase skills={data.skills} color={data.color} />
-        <ProjectShowcase projects={data.projects} color={data.color} />
+        <SimplifiedProjects projects={data.projects} color={data.color} />
         <HonorsAndInterests interests={data.interests} honors={data.honors} />
         <Footer social={data.social} />
       </ContentWrapper>
