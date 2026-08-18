@@ -105,7 +105,9 @@ export function Header({ color, profile, social }: HeaderProps) {
             />
           )}
 
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold">{displayedName}</h1>
+          <h1 className="w-full text-center text-4xl font-bold md:w-auto md:text-5xl lg:text-6xl">
+            {displayedName}
+          </h1>
           <h2 className="text-xl md:text-2xl lg:text-3xl">{displayedTitle}</h2>
           <a
             href={`mailto:${profile.email}`}
