@@ -3,42 +3,45 @@
   "profile": {
     "name": "Thi Ha Zaw (zerozet22k)",
     "email": "zerozet22k@gmail.com",
-    "title": "Software Development Engineer",
+    "title": "Software Engineer — Full-Stack, Backend & Systems",
     "birthDate": "2000-09-22",
     "imageUrl": "profile.jpg",
-    "about": "A passionate software development engineer with extensive experience in web development. He was invited to participate in Google's Foobar challenge. Skilled in a wide range of web technologies with a focus on user interface design, responsiveness, and game development."
+    "about": "Software engineer with professional web development experience since 2019. I build full-stack products, backend services, realtime applications, business systems, and integrations from architecture through deployment. My work spans TypeScript and Node.js systems, databases, Redis and background queues, realtime communication, external APIs, authentication and permissions, as well as C++ and game/simulation engineering. I am comfortable entering existing codebases, debugging difficult problems, improving architecture and performance, and building new systems from scratch."
   },
   "skills": [
-    { "name": "JavaScript", "proficiency": 95, "src": "https://cdn-icons-png.flaticon.com/512/5968/5968292.png" },
-    { "name": "HTML/HTML5", "proficiency": 90, "src": "https://cdn-icons-png.flaticon.com/512/5968/5968267.png" },
-    { "name": "CSS/SASS", "proficiency": 85, "src": "https://cdn-icons-png.flaticon.com/512/5968/5968242.png" },
-    { "name": "MYSQL", "proficiency": 80, "src": "https://cdn-icons-png.flaticon.com/512/5968/5968313.png" },
-    { "name": "PHP", "proficiency": 75, "src": "https://cdn-icons-png.flaticon.com/512/5968/5968332.png" },
-    { "name": "C++", "proficiency": 10, "src": "https://cdn-icons-png.flaticon.com/512/6132/6132222.png" },
-    { "name": "C#", "proficiency": 10, "src": "https://cdn-icons-png.flaticon.com/512/6132/6132221.png" },
-    { "name": "Next.js", "proficiency": 95, "src": "https://cdn.worldvectorlogo.com/logos/next-js.svg" },
+    { "name": "TypeScript", "proficiency": 90, "src": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg" },
+    { "name": "JavaScript", "proficiency": 90, "src": "https://cdn-icons-png.flaticon.com/512/5968/5968292.png" },
+    { "name": "C++", "proficiency": 65, "src": "https://cdn-icons-png.flaticon.com/512/6132/6132222.png" },
+    { "name": "Node.js", "proficiency": 85, "src": "/icons/nodejs.svg" },
+    { "name": "Next.js", "proficiency": 90, "src": "https://cdn.worldvectorlogo.com/logos/next-js.svg" },
     { "name": "React.js", "proficiency": 90, "src": "https://cdn-icons-png.flaticon.com/512/919/919851.png" },
-    { "name": "Bootstrap", "proficiency": 85, "src": "https://cdn-icons-png.flaticon.com/512/5968/5968672.png" },
-    { "name": "Tailwind CSS", "proficiency": 100, "src": "/icons/tailwindcss.svg" },
-    { "name": "Node.js", "proficiency": 75, "src": "/icons/nodejs.svg" },
-    { "name": "AWS", "proficiency": 25, "src": "https://cdn.iconscout.com/icon/free/png-256/aws-1869025-1583149.png" }
+    { "name": "MongoDB", "proficiency": 80, "src": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg" },
+    { "name": "MYSQL", "proficiency": 75, "src": "https://cdn-icons-png.flaticon.com/512/5968/5968313.png" },
+    { "name": "Redis", "proficiency": 70, "src": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/redis/redis-original.svg" },
+    { "name": "Docker", "proficiency": 70, "src": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg" },
+    { "name": "Tailwind CSS", "proficiency": 90, "src": "/icons/tailwindcss.svg" },
+    { "name": "PHP", "proficiency": 70, "src": "https://cdn-icons-png.flaticon.com/512/5968/5968332.png" }
   ],
   "skillGroups": [
     {
-      "title": "Frontend",
-      "skills": ["Next.js", "React", "TypeScript", "JavaScript", "Tailwind CSS", "HTML5", "CSS / SASS", "Ant Design", "Vue.js"]
+      "title": "Languages & Core",
+      "skills": ["TypeScript", "JavaScript", "C++", "SQL", "PHP", "Python", "HTML5", "CSS / SASS"]
     },
     {
-      "title": "Backend & Data",
-      "skills": ["Node.js", "Express", "MongoDB", "Mongoose", "MySQL", "REST APIs", "Zod", "PHP"]
+      "title": "Backend & Systems",
+      "skills": ["Node.js", "Express", "MongoDB", "Mongoose", "MySQL", "Redis", "BullMQ", "Socket.IO / WebSockets", "REST APIs", "Webhooks", "JWT / RBAC", "Rate Limiting", "Idempotency", "Background Workers"]
     },
     {
-      "title": "Systems & Integrations",
-      "skills": ["Socket.IO", "Redis", "BullMQ", "Discord OAuth", "Riot API", "Firebase", "Webhooks", "JWT"]
+      "title": "Frontend & Product",
+      "skills": ["Next.js", "React", "Redux Toolkit", "Tailwind CSS", "Ant Design", "Responsive UI", "Multi-tenant SaaS", "Admin & Operations Workflows"]
     },
     {
-      "title": "Tooling & Delivery",
-      "skills": ["Git / GitHub", "Docker", "Vercel", "Railway", "Redux Toolkit", "PostCSS", "ESLint", "Responsive UI"]
+      "title": "Systems, Game & Tooling",
+      "skills": ["Unreal Engine 5", "C++ Simulation", "Fixed-timestep Systems", "Custom Scripting Languages", "Lexer / Parser / Interpreter", "Pathfinding", "AI Scripting", "Performance Profiling"]
+    },
+    {
+      "title": "Delivery & Integrations",
+      "skills": ["Git / GitHub", "Docker", "Vercel", "Railway", "Firebase", "Riot API", "Discord OAuth", "Stripe", "Testing", "Build & Deployment Tooling"]
     }
   ],
   "social": [
@@ -50,60 +53,68 @@
   "projects": [
     {
       "title": "Elqen Zero",
-      "description": "Multi-workspace omni-channel business inbox with realtime messaging, channel webhooks, workspace roles, AI-assisted replies, billing foundations, and customer-facing chat.",
-      "technologies": ["React", "TypeScript", "Express", "MongoDB", "Redis", "Socket.IO"],
+      "description": "Multi-workspace omni-channel business inbox with realtime messaging, channel webhooks, workspace roles, AI-assisted replies, billing foundations and customer-facing chat. The backend uses Redis, BullMQ, queues, locks, idempotency and rate limiting for operational coordination.",
+      "technologies": ["React", "TypeScript", "Express", "MongoDB", "Redis", "BullMQ", "Socket.IO"],
+      "platform": "Full Stack / SaaS"
+    },
+    {
+      "title": "RiftBoard Myanmar",
+      "description": "League of Legends community platform with player profiles, rankings, match history, mastery data, Discord account linking, tournament workflows and background synchronization. API work includes pacing, cooldowns, 429 handling and database leases to prevent overlapping refresh jobs.",
+      "technologies": ["Next.js", "TypeScript", "MongoDB", "Riot API", "Discord OAuth", "Background Jobs"],
       "platform": "Full Stack"
     },
     {
       "title": "OmniCommerce",
-      "description": "Full-stack commerce platform with storefront browsing, authenticated dashboards, catalog administration, orders, payments, shipments, pricing, and role-aware workflows.",
-      "technologies": ["Next.js", "TypeScript", "MongoDB", "Redux Toolkit", "Tailwind CSS"],
+      "description": "Full-stack commerce platform covering storefront browsing, catalog administration, cart, orders, payments, shipments, pricing, reviews and sourcing with role-aware routes, validation and modular service/repository layers.",
+      "technologies": ["Next.js", "TypeScript", "MongoDB", "Redux Toolkit", "Zod", "Authentication"],
       "platform": "Full Stack"
-    },
-    {
-      "title": "RiftBoard Myanmar",
-      "description": "Myanmar-focused League of Legends platform with player profiles, rankings, match history, mastery data, Discord linking, admin tools, and tournament workflows.",
-      "technologies": ["Next.js", "TypeScript", "MongoDB", "Riot API", "Discord OAuth"],
-      "platform": "Web"
-    },
-    {
-      "title": "Lin Law",
-      "description": "Multilingual business platform combining a public site with internal dashboards for roles, files, newsletters, inquiries, careers, settings, and CMS-style content management.",
-      "technologies": ["Next.js", "TypeScript", "MongoDB", "Firebase", "Ant Design"],
-      "platform": "Full Stack"
-    },
-    {
-      "title": "EWA Finance App",
-      "description": "Internal finance dashboard for EWA.sg with sales tracking, operational reporting, and automated bonus calculations.",
-      "technologies": ["Next.js", "React", "Tailwind CSS", "Database Design"],
-      "platform": "Web"
     },
     {
       "title": "PMXPRESS Logistics",
-      "description": "Logistics platform supporting order management and shipment tracking for cross-border operations.",
-      "technologies": ["Next.js", "Node.js", "REST APIs", "Responsive UI"],
-      "platform": "Web"
+      "description": "Parcel and logistics operations platform with shipment workflows, reception and driver handling, warehouse and location data, CSV bulk imports, PDF waybills, reporting and socket-based realtime updates.",
+      "technologies": ["React", "TypeScript", "Express", "MongoDB", "Socket.IO", "CSV / PDF Workflows"],
+      "platform": "Full Stack"
     },
     {
-      "title": "NEC Learning Platform",
-      "description": "Accessible e-learning platform with course management and interactive learning experiences for K-12 Burmese students.",
-      "technologies": ["Next.js", "React", "Content Management", "Responsive UI"],
-      "platform": "Web"
+      "title": "Lin Law",
+      "description": "Multilingual business and CMS platform combining a public site with internal operations for users, roles, permissions, files, newsletters, inquiries, careers, settings and structured page content.",
+      "technologies": ["Next.js", "TypeScript", "MongoDB", "Firebase", "Pusher", "i18n"],
+      "platform": "Full Stack"
+    },
+    {
+      "title": "EWA Finance",
+      "description": "Internal finance and operations workspace for EWA.sg with sales tracking, closing data, reporting, user and role management, operational records and automated bonus-related calculations.",
+      "technologies": ["Next.js", "TypeScript", "MongoDB", "NextAuth", "Firebase", "Socket.IO"],
+      "platform": "Business System"
     },
     {
       "title": "Honest Online Learning",
-      "description": "Online learning marketplace for live skill-based courses, instructor-led sessions, and education content workflows.",
-      "technologies": ["Next.js", "React", "Web Platform", "Responsive UI"],
-      "platform": "Web"
+      "description": "Full-stack learning platform with course discovery, authenticated profiles and dashboards, instructor content, payment-related workflows and administrative features.",
+      "technologies": ["Next.js", "TypeScript", "MongoDB", "NextAuth", "Firebase", "Stripe"],
+      "platform": "Full Stack"
     }
   ],
   "education": [
     {
-      "institution": "Greenwich University",
-      "date": "Feb 2018",
-      "qualification": "NCC Level 4 (Partially completed Level 5)",
-      "skills": "Responsiveness, Web Pages, RWD, Networking, Game Engines, HTML5, SASS, SQL",
-      "iconText": "GU"
+      "institution": "Stamford International University",
+      "date": "Jul 2026 - Present",
+      "qualification": "Computer Science — Current Undergraduate Student",
+      "skills": "Computer Science, Programming, Mathematics, Information Systems",
+      "iconText": "SIU"
+    },
+    {
+      "institution": "University of Greenwich",
+      "date": "Jun 2026 - Present",
+      "qualification": "BSc (Hons) Computing — Final Year Top-up (Level 6)",
+      "skills": "Computing, Software Development, Systems, Final-Year Project Work",
+      "iconText": "UoG"
+    },
+    {
+      "institution": "NCC Education",
+      "date": "Completed",
+      "qualification": "Level 4 & Level 5 Diplomas in Computing",
+      "skills": "Programming, Web Development, Databases, Networking, Systems Analysis",
+      "iconText": "NCC"
     }
   ],
   "experience": [
@@ -111,13 +122,14 @@
       "title": "Software Development Engineer",
       "company": "Startup Dev Myanmar",
       "dateRange": "Jan 2021 - Present",
-      "location": "Yangon, Myanmar",
+      "location": "Yangon, Myanmar / Remote",
       "responsibilities": [
-        "Provided leadership in a startup environment, shaping project directions and making key decisions.",
-        "Developed and maintained multiple web applications using a range of technologies.",
-        "Collaborated with the team to enhance user interfaces and user experience."
+        "Built and maintained full-stack web applications and internal business systems from requirements through deployment.",
+        "Designed application architecture, data models, authentication and role-based workflows across client and product work.",
+        "Integrated realtime features, external APIs, file workflows and operational tooling, then improved existing systems through debugging, refactoring and performance work.",
+        "Worked directly with stakeholders to translate business requirements into maintainable software and iterative product improvements."
       ],
-      "skillsUsed": "REST APIs, User Interface Design, JSOM, DOM, Responsiveness, and more...",
+      "skillsUsed": "TypeScript, JavaScript, React, Next.js, Node.js, Express, MongoDB, MySQL, REST APIs, Socket.IO, Firebase, Docker, Git",
       "endorsements": [
         {
           "name": "U Yang Paing",
@@ -135,54 +147,34 @@
           "name": "Daw Aye Myat",
           "position": "Program Coordinator",
           "company": "Honest Online Learning Program, Myanmar",
-          "quote": "Thi Ha's contribution to the HOLP platform was invaluable. His strategic approach to development and passion for online education ensured the platform was user-friendly and robust. We couldn't have achieved our milestones without his expertise."
+          "quote": "Thi Ha's contribution to the HOLP platform was invaluable. His strategic approach to development and passion for online education ensured the platform was user-friendly and robust."
         },
         {
           "name": "EWA.sg Team",
           "position": "Financial App Development",
           "company": "EWA.sg, Singapore",
-          "quote": "Thi Ha went above and beyond in developing EWA Finance, our internal financial tracking system. Not only did he deliver a robust and efficient platform, but he also provided us with a **significant discount** while **exceeding our original expectations**. His technical expertise, intuitive UI design, and optimized database structure made our financial tracking seamless, helping our team work more efficiently and improving overall sales performance. We are grateful for his professionalism and dedication."
+          "quote": "Thi Ha went above and beyond in developing EWA Finance. His technical expertise, intuitive UI design, and optimized database structure made our financial tracking more efficient."
         }
       ]
     },
     {
       "title": "Junior Web Developer",
-      "company": "",
-      "dateRange": "March 2019 - Jan 2021",
+      "company": "Punnami",
+      "dateRange": "Mar 2019 - Jan 2021",
+      "location": "Yangon, Myanmar",
       "responsibilities": [
-        "Assisted in developing and launching multiple web-based projects.",
-        "Implemented user-friendly interfaces to enhance engagement.",
-        "Took on additional WordPress user-developer responsibilities.",
-        "Provided technical assistance to senior developers, helping troubleshoot and optimize code.",
-        "Took initiative in improving project efficiency and suggesting best practices."
+        "Developed and launched web projects using JavaScript, CSS and WordPress, including responsive UI and client-requested features.",
+        "Debugged frontend and integration issues and supported senior developers with troubleshooting and code improvements.",
+        "Maintained existing sites, implemented changes safely, and suggested workflow and performance improvements as project requirements evolved."
       ],
-      "skillsUsed": "UI Design, Game Programming, WordPress, JavaScript, and more...",
-      "endorsements": [
-        {
-          "name": "Senior Developers Team",
-          "position": "Lead Developers & Colleagues",
-          "company": "Various Web Projects",
-          "quote": "Despite being a junior, Thi Ha demonstrated exceptional problem-solving skills and a deep understanding of web development. He often helped troubleshoot complex issues that even senior developers struggled with. His contributions significantly improved project efficiency, and his ability to optimize workflows was invaluable to the team."
-        }
-      ]
-    },
-    {
-      "title": "Game Development Enthusiast",
-      "company": "Personal Projects",
-      "dateRange": "Jan 2010 - Dec 2020",
-      "responsibilities": [
-        "Experimented with game development concepts, exploring various game engines and programming techniques.",
-        "Built and tested multiple small-scale game projects for fun and learning.",
-        "Gained experience in UI design, game mechanics, and player interaction."
-      ],
-      "skillsUsed": "UI Design, API, Networking, Game Programming, Prototyping, and more..."
+      "skillsUsed": "JavaScript, HTML5, CSS / SASS, WordPress, PHP, Responsive UI, Debugging, Git"
     }
   ],
   "honors": [
     {
       "icon": "faTrophy",
       "title": "Invitation to Google Foobar Challenge",
-      "description": "Recognized by Google and invited to participate in their exclusive coding challenge."
+      "description": "Invited to participate in Google's programming challenge."
     }
   ],
   "interests": [
